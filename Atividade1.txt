@@ -1,0 +1,58 @@
+A próxima atividade será de programação, vocês devem escolher entre a programação do sensor ou dos leds.
+	Pra quem escolher o sensor, é necessário fazer a leitura, enviar o dado para a CAN. É necessário uma resolução de 20RPM (1000-12000) e frequência de envio de 25Hz. Mais dúvidas serão esclarecidas no grupo. Esse sensor estará em um Arduino Uno (atmega328p).
+	Pra quem escolher a parte dos LEDs, é necessário ler os valores da CAN, e acionar a faixa de LEDs de maneira criativa (olhem como outros carros de FSAE/F1/Corridas em geral usam). A fita utilizada será essa: "x10 ws2813 grove". A fita estará conectada em um Arduino Mega (atmega2560).
+	
+	Regras:
+
+	PINAGEM (sensor):
+
+//Pinos da CAN - pinagem do modulo mcp2515
+
+#define CAN_SCK 13
+#define CAN_SI 11
+#define CAN_SO 12
+#define CAN_CS 10
+
+//Pino do sensor
+
+#define PIN_SPEED 3
+
+	PINAGEM (fita):
+
+
+#define SPI_SCK 52    // define SPI_SCK (clock do SPI bus) no pino 52
+#define SPI_SI 51     // define SPI_SI  (slave input do SPI bus) no pino 51
+#define SPI_SO 50     // define SPI_SO  (slave output do SPI bus) no pino 50
+#define SPI_CS_CAN 53 // define SPI_CS_CAN  (slave select da CAN no SPI bus) no pino 53
+
+
+// cria uma instância do módulo transciever CAN (configura pino CS)
+
+MCP2515 mcp2515(SPI_CS_CAN);
+
+//Pino da fita de LED
+
+#define LED_RPM 40
+
+
+	BIBLIOTECAS:
+
+
+#include <mcp2515.h>
+#include <TimerOne.h> //Falaremos dessa em uma aula
+
+#include <SPI.h> //Biblioteca de funções do protocolo SPI (Essa só precisa no módulo da fita)
+
+Se acharem necessário utilizar outra, fiquem a vontade mas não exagerem e pesquisem muito antes de usar (tem uns que são menos otimizados e outros que são "inúteis")!
+
+	PACOTE DE RPM:21:13 06/08/2020
+
+ID do pacote de RPM: 0x002
+
+DLC do pacote: 2
+
+	INFORMAÇÕES DA CAN:
+
+Velocidade da rede: 1000KBPS
+
+	É isso! Sejam criativos e troquem ideias com o pessoal, estaremos no grupo sempre respondendo as suas dúvidas e boa programação!
