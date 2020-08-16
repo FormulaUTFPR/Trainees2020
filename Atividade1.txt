@@ -1,6 +1,6 @@
 A próxima atividade será de programação, vocês devem escolher entre a programação do sensor ou dos leds.
 	Pra quem escolher o sensor, é necessário fazer a leitura, enviar o dado para a CAN. É necessário uma resolução de 20RPM (1000-12000) e frequência de envio de 25Hz. Mais dúvidas serão esclarecidas no grupo. Esse sensor estará em um Arduino Uno (atmega328p).
-	Pra quem escolher a parte dos LEDs, é necessário ler os valores da CAN, e acionar a faixa de LEDs de maneira criativa (olhem como outros carros de FSAE/F1/Corridas em geral usam). A fita utilizada será essa: "x10 ws2813 grove". A fita estará conectada em um Arduino Mega (atmega2560).
+	Pra quem escolher a parte dos LEDs, é necessário ler os valores da CAN, e acionar a faixa de LEDs de maneira criativa (olhem como outros carros de FSAE/F1/Corridas em geral usam). Esses LEDs servem para indicar o RPM. A fita utilizada será essa: "x10 ws2813 grove". A fita estará conectada em um Arduino Mega (atmega2560).
 	
 	Regras:
 
