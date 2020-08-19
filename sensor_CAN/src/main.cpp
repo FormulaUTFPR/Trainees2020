@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <CAN.h>
 #include <mcp2515.h>
-#include <TimerOne.h>
+#include "TimerOne.h"
 
 //Pinos da CAN - pinagem do modulo mcp2515
 
@@ -33,15 +33,24 @@ void setup() {
   }
 }
 
+//configura o ID do sensor e o tamanho do pacote, respectivamente
 void setupCAN() {
   canRPM.can_id = ID_ADDRESS_SENSOR_RPM;
   canRPM.can_dlc = 2;
 }
 
+//quantifica rotações
 void sensorRPM(void) {
+  int count;
+  int rotacao = 0;
   float voltage;
-  voltage = map(analogRead(PIN_SPEED));
-  canRPM.data[0] = ();
+  voltage = map(analogRead(PIN_SPEED));    //obtém o valor da tensão
+  for (count==0; voltage != 0; count++){
+    if (count % 3 == 0){
+      //a cada 3 pulsos da tensão provocados pelos 3 dentes faltantes é adicionado 1 rotação
+      rotacao = rotacao++;
+    }
+  }
 }
 
 void loop() {
