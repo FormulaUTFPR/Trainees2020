@@ -1,3 +1,11 @@
+/* 
+IDÉIA:
+LIGOU A CHAVE: acende a fita de LEDs de forma crescente (Verde (3 leds), Amarelo (2 leds), Vermelho (2 leds) e Azul (3 leds)) 
+e retorna até ficar apenas o 1 LED verde aceso.
+DEU A PARTIDA: (1000 RPM) apenas o 1 LED verde aceso, conforme vai acelerando os LEDs vão se acendendo gradativamente
+MAXIMO RPM: (1000 RPM antes da maxima alcançada pelo carro) todos os LEDs ficam piscando 
+*/
+
 #include <Arduino.h>
 #include <mcp2515.h>
 #include <TimerOne.h>
@@ -20,7 +28,9 @@ MCP2515 mcp2515 (SPI_CS_CAN); // (configura pino CS) cria uma instancia do modul
 #define B 0x0000FF // (LED Blue)
 
 #define PIN 4 // (pino de controle) pino 4
-#define LED_COUNT 10 // (quantidade de LEDs na fita)
+#define LED_COUNT 10 // (quantidade de LEDs na fita) 10 LEDs
+
+#define MAX_RPM 12000 // (maxima RPM possivel no carro) 12000 RPM
 
 Adafruit_NeoPixel leds = Adafruit_NeoPixel(LED_COUNT, PIN, NEO_GBR + NEO_KHZ800); // cria uma instância da Classe Adafruit NeoPixel chamada "leds"
 
@@ -34,5 +44,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+
+
+ 
 }
