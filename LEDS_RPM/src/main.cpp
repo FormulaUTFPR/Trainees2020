@@ -45,6 +45,36 @@ void setup() {
 
 void loop() {
 
+  if (READ_RPM > 100){
+    //LIGAR LED 1
+  }
+  if (READ_RPM > ((MAX_RPM/10).1)){
+    //LIGAR LED 2
+  }
+  if (READ_RPM > ((MAX_RPM/10).2)){
+    //LIGAR LED 3
+  }
+  if (READ_RPM > ((MAX_RPM/10).3)){
+    //LIGAR LED 4
+  }
+  if (READ_RPM > ((MAX_RPM/10).4)){
+    //LIGAR LED 5
+  }
+  if (READ_RPM > ((MAX_RPM/10).5)){
+    //LIGAR LED 6
+  }
+  if (READ_RPM > ((MAX_RPM/10).6)){
+    //LIGAR LED 7
+  }
+  if (READ_RPM > ((MAX_RPM/10).7)){
+    //LIGAR LED 8
+  }
+  if (READ_RPM > ((MAX_RPM/10).8)){
+    //LIGAR LED 9
+  }
+  if (READ_RPM > ((MAX_RPM/10).9)){
+    //PISCAR TODOS OS LEDS
+  }
 
  
 }
