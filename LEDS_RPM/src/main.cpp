@@ -34,6 +34,7 @@ MCP2515 mcp2515 (SPI_CS_CAN); // (configura pino CS) cria uma instancia do modul
 
 Adafruit_NeoPixel leds = Adafruit_NeoPixel(LED_COUNT, PIN, NEO_GBR + NEO_KHZ800); // cria uma instância da Classe Adafruit NeoPixel chamada "leds"
 
+int READ_RPM = 0;
 int LED_1 = 0;
 int LED_2 = 1;
 int LED_3 = 2;
@@ -55,6 +56,8 @@ void setup() {
 }
 
 void loop() {
+
+  READ_RPM = 1000 + (rand ()% 12000); // seleciona valor aleatório entre 1000 e 12000 para efeito de simulação
 
    if (READ_RPM > 100 && < ((MAX_RPM/10).1)) ) {
    
