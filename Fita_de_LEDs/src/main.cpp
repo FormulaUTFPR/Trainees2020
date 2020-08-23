@@ -73,97 +73,13 @@ void CAN_READ()
 void LED_RPM()
 { //Demonstrar o valor de RPM na fita de LED RGB
 
-  if (1000 < Valor_RPM && Valor_RPM < 1100)
-  {
-
-    for (int i = 0; i < 0; i++)
+  int Num_LEDs = int (Valor_RPM/1200);
+  
+  for(int i=0;i<Num_LEDs;i++)
     {
-      pixels.setPixelColor(i, pixels.ColorHSV(20000 - i * 2150));
-      pixels.show();
+    pixels.setPixelColor(i, pixels.ColorHSV(20000-i*2150)); 
+    pixels.show(); 
     }
-    if (1100 < Valor_RPM < 2200)
-    {
 
-      for (int i = 0; i < 1; i++)
-      {
-        pixels.setPixelColor(i, pixels.ColorHSV(20000 - i * 2150));
-        pixels.show();
-      }
-      if (2200 < Valor_RPM && Valor_RPM < 3300)
-      {
-
-        for (int i = 0; i < 2; i++)
-        {
-          pixels.setPixelColor(i, pixels.ColorHSV(20000 - i * 2150));
-          pixels.show();
-        }
-        if (3300 < Valor_RPM && Valor_RPM < 4400)
-        {
-
-          for (int i = 0; i < 3; i++)
-          {
-            pixels.setPixelColor(i, pixels.ColorHSV(20000 - i * 2150));
-            pixels.show();
-          }
-          if (4400 < Valor_RPM && Valor_RPM < 5500)
-          {
-
-            for (int i = 0; i < 4; i++)
-            {
-              pixels.setPixelColor(i, pixels.ColorHSV(20000 - i * 2150));
-              pixels.show();
-            }
-            if (5500 < Valor_RPM && Valor_RPM < 6600)
-            {
-
-              for (int i = 0; i < 5; i++)
-              {
-                pixels.setPixelColor(i, pixels.ColorHSV(20000 - i * 2150));
-                pixels.show();
-              }
-              if (6600 < Valor_RPM && Valor_RPM < 7700)
-              {
-
-                for (int i = 0; i < 6; i++)
-                {
-                  pixels.setPixelColor(i, pixels.ColorHSV(20000 - i * 2150));
-                  pixels.show();
-                }
-
-                if (7700 < Valor_RPM && Valor_RPM < 8800)
-                {
-
-                  for (int i = 0; i < 7; i++)
-                  {
-                    pixels.setPixelColor(i, pixels.ColorHSV(20000 - i * 2150));
-                    pixels.show();
-                  }
-
-                  if (8800 < Valor_RPM && Valor_RPM < 9900)
-                  {
-
-                    for (int i = 0; i < 8; i++)
-                    {
-                      pixels.setPixelColor(i, pixels.ColorHSV(20000 - i * 2150));
-                      pixels.show();
-                    }
-
-                    if (9900 < Valor_RPM && Valor_RPM < 12000)
-                    {
-
-                      for (int i = 0; i < 9; i++)
-                      {
-                        pixels.setPixelColor(i, pixels.ColorHSV(20000 - i * 2150));
-                        pixels.show();
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+  pixels.clear();
 }
